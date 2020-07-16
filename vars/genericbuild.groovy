@@ -7,6 +7,7 @@ node {
     stage('Build') {
 	try{
 	        echo 'Building....'
+		def dir = new File(pwd());
     		dotnet_version.bat
 	        echo 'Building New Feature'
 		releasenotes(changes:"true")
