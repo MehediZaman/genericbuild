@@ -10,7 +10,6 @@ node {
 	try{
 	        echo 'Building....'
 		bat 'dir %windir%\\Microsoft.NET\\Framework /AD'
-		cmd_exec('dir %windir%\\Microsoft.NET\\Framework /AD')
 		bat 'echo %PATH%'
 	        echo 'Building New Feature'
 		releasenotes(changes:"true")
