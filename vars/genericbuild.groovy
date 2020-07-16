@@ -7,7 +7,7 @@ node {
     stage('Build') {
 	try{
 	        echo 'Building....'
-    		bat dotnet_version.bat
+    		dotnet_version.bat
 	        echo 'Building New Feature'
 		releasenotes(changes:"true")
         }catch(ex){
