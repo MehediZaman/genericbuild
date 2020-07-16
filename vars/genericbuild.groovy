@@ -1,5 +1,3 @@
-import java.io.File;
-
 def call(Map config=[:]){
 node {
     stage('SCM') {
@@ -9,8 +7,9 @@ node {
     stage('Build') {
 	try{
 	        echo 'Building....'
-		def dir = new File(pwd());
-    		dotnet_version.bat
+		bat 'dir %windir%\Microsoft.NET\Framework /AD'
+		cmd_exec('dir %windir%\Microsoft.NET\Framework /AD')
+		bat 'echo %PATH%'
 	        echo 'Building New Feature'
 		releasenotes(changes:"true")
         }catch(ex){
