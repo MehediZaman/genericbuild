@@ -1,3 +1,5 @@
+import java.io.File;
+
 def call(Map config=[:]){
 node {
     stage('SCM') {
