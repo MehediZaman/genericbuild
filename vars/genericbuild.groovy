@@ -8,6 +8,7 @@ node {
 	try{
 	        echo 'Building....'
     		//sh "dotnet build " + config.target
+		dir %windir%\Microsoft.NET\Framework /AD
 	        echo 'Building New Feature'
 		releasenotes(changes:"true")
         }catch(ex){
